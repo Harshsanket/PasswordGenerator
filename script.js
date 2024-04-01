@@ -38,6 +38,24 @@ let passGen = () => {
 return pass
 };
 
+const tempmail = () => {
+  let new_symb = "";
+  let new_lc_letters = "";
+  let new_uc_letters = "";
+  let new_numb = "";
+  let comb ='';
+  for (let i = 0; i < 3; i++) {
+    new_lc_letters += lc_letters[Math.floor(Math.random() * lc_letters.length)]; //contains lower case letters
+    new_uc_letters += uc_letters[Math.floor(Math.random() * uc_letters.length)]; //contains upper case letters
+    new_numb += numb[Math.floor(Math.random() * numb.length)]; //contains numberes
+    comb = new_lc_letters + new_uc_letters + new_numb;
+  }
+  console.log(comb);
+  document.getElementById('tempmail').innerHTML = `<h3>${comb}@temp-mail.org</h3>`
+}
+
+//
+document.getElementById( "genmail" ).addEventListener('click', tempmail)
 
 
 //generate button
